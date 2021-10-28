@@ -7,11 +7,11 @@ router.get('/', function(req, res, next) {
     const url = new URL(fake_url)
     const search_params = url.searchParams
       if (req.method === 'GET' ) {
+        const Value1 = search_params.get("x")
         if(Value1 === null)
         {
             Value1=Math.round(Math.random()*900);
         }
-        const Value1 = search_params.get("x")
         res.writeHead(200,{'Content-Type': 'text/html'});
         res.write('Math.atan() applied to '+Value1+' is '+Math.atan(Value1) )
         res.write('<br/>Math.exp() applied to '+Value1+' is '+Math.exp(Value1))
